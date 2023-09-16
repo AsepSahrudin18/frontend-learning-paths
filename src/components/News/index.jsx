@@ -78,15 +78,24 @@ function News() {
         <div>
             <Header title="Latest News" subtitle="Covering March & April" />
 
+            {/* versi: 1 */}
             {/* <Card title={someNews[0].title} date={someNews[0].date} content={someNews[0].content} image={someNews[0].image} category={someNews[0].category} link={someNews[0].link} />
             <Card title={someNews[1].title} date={someNews[1].date} content={someNews[1].content} image={someNews[1].image} category={someNews[1].category} link={someNews[1].link} />
             <Card title={someNews[2].title} date={someNews[2].date} content={someNews[2].content} image={someNews[2].image} category={someNews[2].category} link={someNews[2].link} /> */}
 
-            {/* best practicenya bisa gini */}
+            {/* best practicenya bisa gini. versi: 2 */}
 
-            <Card {...someNews[0]} />
+            {/* <Card {...someNews[0]} />
             <Card {...someNews[1]} />
-            <Card {...someNews[2]} />
+            <Card {...someNews[2]} /> */}
+
+
+            {/* menggunakan list. versi best practice paling bagus: 3 */}
+
+
+            {someNews.map((news) => (
+                <Card {...news} key={news.title} />
+            ))}
         </div>
     )
 }
